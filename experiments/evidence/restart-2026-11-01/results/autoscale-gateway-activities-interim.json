@@ -1,0 +1,166 @@
+{
+    "ScalingActivities": [
+        {
+            "ActivityId": "9672ba82-17ba-450a-9b27-7cbbab35ddf3",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/gateway",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Attempting to scale due to alarm triggered",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/gateway-AlarmHigh-56fa0a58-11d0-46e7-b4cc-8b642e4acd68 in state ALARM triggered policy gateway-requests-per-target",
+            "StartTime": "2026-11-01T22:35:35.601000-05:00",
+            "StatusCode": "Failed",
+            "NotScaledReasons": [
+                {
+                    "Code": "AlreadyAtMaxCapacity",
+                    "MaxCapacity": 4
+                }
+            ]
+        },
+        {
+            "ActivityId": "b1c8d1b8-4b3a-4b38-96b8-115eb29eb397",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/gateway",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Setting desired count to 4.",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/gateway-AlarmHigh-56fa0a58-11d0-46e7-b4cc-8b642e4acd68 in state ALARM triggered policy gateway-requests-per-target",
+            "StartTime": "2026-11-01T22:34:35.668000-05:00",
+            "EndTime": "2026-11-01T22:35:44.978000-05:00",
+            "StatusCode": "Successful",
+            "StatusMessage": "Successfully set desired count to 4. Change successfully fulfilled by ecs."
+        },
+        {
+            "ActivityId": "6a1ec766-aed6-4a8f-b969-861e991dec66",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/gateway",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Attempting to scale due to alarm triggered",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/gateway-AlarmLow-cb10c9ae-6891-4546-95f5-c63717ac73ef in state ALARM triggered policy gateway-requests-per-target",
+            "StartTime": "2026-11-01T22:24:03.559000-05:00",
+            "StatusCode": "Successful",
+            "NotScaledReasons": [
+                {
+                    "Code": "AlreadyAtDesiredCapacity"
+                }
+            ]
+        },
+        {
+            "ActivityId": "d65b2f06-02e3-4bdf-a2c1-294269eaf63a",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/gateway",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Attempting to scale due to alarm triggered",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/gateway-AlarmLow-cb10c9ae-6891-4546-95f5-c63717ac73ef in state ALARM triggered policy gateway-requests-per-target",
+            "StartTime": "2026-11-01T22:04:03.561000-05:00",
+            "StatusCode": "Failed",
+            "NotScaledReasons": [
+                {
+                    "Code": "AlreadyAtMinCapacity",
+                    "MinCapacity": 2
+                }
+            ]
+        },
+        {
+            "ActivityId": "baf0afc6-ccc1-4d2e-b2be-dc156d73f445",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/gateway",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Attempting to scale due to alarm triggered",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/gateway-AlarmLow-cb10c9ae-6891-4546-95f5-c63717ac73ef in state ALARM triggered policy gateway-requests-per-target",
+            "StartTime": "2026-11-01T22:02:03.561000-05:00",
+            "StatusCode": "Successful",
+            "NotScaledReasons": [
+                {
+                    "Code": "AlreadyAtDesiredCapacity"
+                }
+            ]
+        },
+        {
+            "ActivityId": "cb34147a-21e8-4040-89fa-7266d2419142",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/gateway",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Attempting to scale due to alarm triggered",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/gateway-AlarmHigh-56fa0a58-11d0-46e7-b4cc-8b642e4acd68 in state ALARM triggered policy gateway-requests-per-target",
+            "StartTime": "2026-11-01T21:44:35.617000-05:00",
+            "StatusCode": "Failed",
+            "NotScaledReasons": [
+                {
+                    "Code": "AlreadyAtMaxCapacity",
+                    "MaxCapacity": 2
+                }
+            ]
+        },
+        {
+            "ActivityId": "65be4ac8-947d-43c4-a4c4-cde50cf72451",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/gateway",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Attempting to scale due to alarm triggered",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/gateway-AlarmHigh-10740eb9-4699-4ec4-97a5-05be1577c577 in state ALARM triggered policy gateway-requests-per-target",
+            "StartTime": "2026-10-29T10:14:15.151000-04:00",
+            "StatusCode": "Failed",
+            "NotScaledReasons": [
+                {
+                    "Code": "AlreadyAtMaxCapacity",
+                    "MaxCapacity": 4
+                }
+            ]
+        },
+        {
+            "ActivityId": "46f6ab0e-12c7-4706-805c-0af29b977380",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/gateway",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Setting desired count to 4.",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/gateway-AlarmHigh-10740eb9-4699-4ec4-97a5-05be1577c577 in state ALARM triggered policy gateway-requests-per-target",
+            "StartTime": "2026-10-29T10:13:15.281000-04:00",
+            "EndTime": "2026-10-29T10:14:20.589000-04:00",
+            "StatusCode": "Successful",
+            "StatusMessage": "Successfully set desired count to 4. Change successfully fulfilled by ecs."
+        },
+        {
+            "ActivityId": "1abe7041-299d-43fc-b5fc-888c4c2bfbad",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/gateway",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Attempting to scale due to alarm triggered",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/gateway-AlarmHigh-10740eb9-4699-4ec4-97a5-05be1577c577 in state ALARM triggered policy gateway-requests-per-target",
+            "StartTime": "2026-10-29T10:06:15.149000-04:00",
+            "StatusCode": "Successful",
+            "NotScaledReasons": [
+                {
+                    "Code": "AlreadyAtDesiredCapacity",
+                    "CurrentCapacity": 3
+                }
+            ]
+        },
+        {
+            "ActivityId": "c76db551-e2b2-4d4f-9771-28b5141fcebf",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/gateway",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Setting desired count to 3.",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/gateway-AlarmHigh-10740eb9-4699-4ec4-97a5-05be1577c577 in state ALARM triggered policy gateway-requests-per-target",
+            "StartTime": "2026-10-29T10:05:15.207000-04:00",
+            "EndTime": "2026-10-29T10:06:18.548000-04:00",
+            "StatusCode": "Successful",
+            "StatusMessage": "Successfully set desired count to 3. Change successfully fulfilled by ecs."
+        },
+        {
+            "ActivityId": "a56ef7ef-7293-4a0e-afd3-2aae24a0ffd8",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/gateway",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Attempting to scale due to alarm triggered",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/gateway-AlarmLow-6df45de1-a4b1-44ca-af67-ac03a7490e7d in state ALARM triggered policy gateway-requests-per-target",
+            "StartTime": "2026-10-29T08:04:19.040000-04:00",
+            "StatusCode": "Failed",
+            "NotScaledReasons": [
+                {
+                    "Code": "AlreadyAtMinCapacity",
+                    "MinCapacity": 2
+                }
+            ]
+        }
+    ]
+}

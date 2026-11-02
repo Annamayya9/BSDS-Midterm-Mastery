@@ -1,0 +1,18 @@
+{
+    "repositories": [
+        {
+            "repositoryArn": "arn:aws:ecr:us-east-1:316894995509:repository/assignment6-search",
+            "registryId": "316894995509",
+            "repositoryName": "assignment6-search",
+            "repositoryUri": "316894995509.dkr.ecr.us-east-1.amazonaws.com/assignment6-search",
+            "createdAt": "2026-10-23T15:00:04.877000-04:00",
+            "imageTagMutability": "IMMUTABLE",
+            "imageScanningConfiguration": {
+                "scanOnPush": true
+            },
+            "encryptionConfiguration": {
+                "encryptionType": "AES256"
+            }
+        }
+    ]
+}

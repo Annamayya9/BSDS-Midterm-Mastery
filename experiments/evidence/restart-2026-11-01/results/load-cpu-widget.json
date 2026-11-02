@@ -1,0 +1,17 @@
+{
+  "title": "Load and recovery - ECS CPU, Nov 2 2026 UTC",
+  "view": "timeSeries",
+  "stacked": false,
+  "region": "us-east-1",
+  "start": "2026-11-02T02:29:00Z",
+  "end": "2026-11-02T02:50:00Z",
+  "period": 60,
+  "stat": "Average",
+  "width": 1200,
+  "height": 600,
+  "legend": {"position": "bottom"},
+  "metrics": [
+    ["AWS/ECS", "CPUUtilization", "ClusterName", "file-transfer", "ServiceName", "gateway", {"label": "Gateway CPU (%)"}],
+    ["AWS/ECS", "CPUUtilization", "ClusterName", "file-transfer", "ServiceName", "backend", {"label": "Backend CPU (%)"}]
+  ]
+}

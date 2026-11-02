@@ -1,0 +1,14 @@
+{
+  "title": "Autoscaling spike - ALB requests per target, Nov 2 2026 UTC",
+  "view": "timeSeries", "stacked": false, "region": "us-east-1",
+  "start": "2026-11-02T03:43:00Z", "end": "2026-11-02T03:53:00Z",
+  "period": 60, "stat": "Sum", "width": 1200, "height": 600,
+  "legend": {"position": "bottom"},
+  "metrics": [
+    ["AWS/ApplicationELB", "RequestCountPerTarget", "LoadBalancer", "app/file-transfer-gateway/cc6cc1fd321da10f", "TargetGroup", "targetgroup/file-transfer-gateway/b484d88d88894740", {"label": "Requests per target / minute"}]
+  ],
+  "annotations": {
+    "horizontal": [{"label": "Gateway scaling target (100/min)", "value": 100}],
+    "vertical": [{"label": "Desired count set to 4", "value": "2026-11-02T03:49:35Z"}]
+  }
+}

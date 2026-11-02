@@ -1,0 +1,10 @@
+{"stage":"udp-send-5-stop","timestamp_utc":"2026-11-02T03:11:36.4500799+00:00"}
+{"stage":"udp-send-5-stop-confirmed","timestamp_utc":"2026-11-02T03:11:47.8674367+00:00","state":"stopped","note":"Earlier POST stop returned 405; GET stopped the test"}
+{"stage":"udp-receive-5-stop-confirmed","timestamp_utc":"2026-11-02T03:22:18.9886038+00:00","state":"stopped"}
+{"stage":"autoscale-ramp-5","event":"users_requested","timestamp_utc":"2026-11-02T03:27:25.6436571+00:00","users":5,"spawn_per_second":1}
+{"stage":"autoscale-ramp-20","event":"users_requested","timestamp_utc":"2026-11-02T03:28:36.0550892+00:00","users":20,"spawn_per_second":2}
+{"stage":"autoscale-ramp-50","event":"users_requested","timestamp_utc":"2026-11-02T03:29:46.2617019+00:00","users":50,"spawn_per_second":5}
+{"stage":"autoscale-ramp-stop-confirmed","timestamp_utc":"2026-11-02T03:38:13.8703802+00:00","state":"stopped"}
+{"stage":"autoscale-between-trials","event":"manual-gateway-desired-count","timestamp_utc":"2026-11-02T03:42:48.0699807+00:00","desired":2,"reason":"restore matched starting capacity for spike"}
+{"stage":"autoscale-spike-50","event":"users_requested","timestamp_utc":"2026-11-02T03:43:47.8170346+00:00","users":50,"spawn_per_second":25}
+{"stage":"autoscale-spike-stop-confirmed","timestamp_utc":"2026-11-02T03:52:09.4345964+00:00","state":"stopped"}

@@ -1,0 +1,151 @@
+{
+    "MetricDataResults": [
+        {
+            "Id": "gateway_cpu",
+            "Label": "AWS/ECS file-transfer gateway CPUUtilization",
+            "Timestamps": [
+                "2026-11-02T03:43:00+00:00",
+                "2026-11-02T03:44:00+00:00",
+                "2026-11-02T03:45:00+00:00",
+                "2026-11-02T03:46:00+00:00",
+                "2026-11-02T03:47:00+00:00"
+            ],
+            "Values": [
+                0.03722234908491373,
+                0.6008559283800423,
+                1.168667197227478,
+                1.2268109321594238,
+                1.2323678731918335
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "backend_cpu",
+            "Label": "AWS/ECS file-transfer backend CPUUtilization",
+            "Timestamps": [
+                "2026-11-02T03:43:00+00:00",
+                "2026-11-02T03:44:00+00:00",
+                "2026-11-02T03:45:00+00:00",
+                "2026-11-02T03:46:00+00:00",
+                "2026-11-02T03:47:00+00:00"
+            ],
+            "Values": [
+                0.2891801049311956,
+                1.1994479795296986,
+                1.143656611442566,
+                1.098806510368983,
+                1.1063469847043355
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "gateway_memory",
+            "Label": "AWS/ECS file-transfer gateway MemoryUtilization",
+            "Timestamps": [
+                "2026-11-02T03:43:00+00:00",
+                "2026-11-02T03:44:00+00:00",
+                "2026-11-02T03:45:00+00:00",
+                "2026-11-02T03:46:00+00:00",
+                "2026-11-02T03:47:00+00:00"
+            ],
+            "Values": [
+                1.0091145833333333,
+                1.0904947916666667,
+                1.3671875,
+                1.3671875,
+                1.3671875
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "backend_memory",
+            "Label": "AWS/ECS file-transfer backend MemoryUtilization",
+            "Timestamps": [
+                "2026-11-02T03:43:00+00:00",
+                "2026-11-02T03:44:00+00:00",
+                "2026-11-02T03:45:00+00:00",
+                "2026-11-02T03:46:00+00:00",
+                "2026-11-02T03:47:00+00:00"
+            ],
+            "Values": [
+                1.171875,
+                1.46484375,
+                1.5625,
+                1.5625,
+                1.5625
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "alb_requests_per_target",
+            "Label": "AWS/ApplicationELB app/file-transfer-gateway/cc6cc1fd321da10f targetgroup/file-transfer-gateway/b484d88d88894740 RequestCountPerTarget",
+            "Timestamps": [
+                "2026-11-02T03:43:00+00:00",
+                "2026-11-02T03:44:00+00:00",
+                "2026-11-02T03:45:00+00:00",
+                "2026-11-02T03:46:00+00:00",
+                "2026-11-02T03:47:00+00:00",
+                "2026-11-02T03:48:00+00:00"
+            ],
+            "Values": [
+                58.0,
+                246.0,
+                249.0,
+                247.0,
+                242.5,
+                238.5
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "alb_requests",
+            "Label": "AWS/ApplicationELB app/file-transfer-gateway/cc6cc1fd321da10f RequestCount",
+            "Timestamps": [
+                "2026-11-02T03:43:00+00:00",
+                "2026-11-02T03:44:00+00:00",
+                "2026-11-02T03:45:00+00:00",
+                "2026-11-02T03:46:00+00:00",
+                "2026-11-02T03:47:00+00:00",
+                "2026-11-02T03:48:00+00:00"
+            ],
+            "Values": [
+                116.0,
+                492.0,
+                498.0,
+                494.0,
+                485.0,
+                477.0
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "alb_target_5xx",
+            "Label": "AWS/ApplicationELB app/file-transfer-gateway/cc6cc1fd321da10f HTTPCode_Target_5XX_Count",
+            "Timestamps": [
+                "2026-11-02T03:43:00+00:00",
+                "2026-11-02T03:44:00+00:00",
+                "2026-11-02T03:45:00+00:00",
+                "2026-11-02T03:46:00+00:00",
+                "2026-11-02T03:47:00+00:00",
+                "2026-11-02T03:48:00+00:00"
+            ],
+            "Values": [
+                52.0,
+                260.0,
+                258.0,
+                257.0,
+                250.0,
+                237.0
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "alb_5xx",
+            "Label": "AWS/ApplicationELB app/file-transfer-gateway/cc6cc1fd321da10f HTTPCode_ELB_5XX_Count",
+            "Timestamps": [],
+            "Values": [],
+            "StatusCode": "Complete"
+        }
+    ],
+    "Messages": []
+}

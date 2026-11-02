@@ -1,0 +1,127 @@
+{
+    "MetricDataResults": [
+        {
+            "Id": "gateway_cpu",
+            "Label": "AWS/ECS file-transfer gateway CPUUtilization",
+            "Timestamps": [
+                "2026-11-02T03:27:00+00:00",
+                "2026-11-02T03:28:00+00:00",
+                "2026-11-02T03:29:00+00:00",
+                "2026-11-02T03:30:00+00:00"
+            ],
+            "Values": [
+                0.2512513678520918,
+                0.7838982939720154,
+                1.253248373667399,
+                1.6577630639076233
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "backend_cpu",
+            "Label": "AWS/ECS file-transfer backend CPUUtilization",
+            "Timestamps": [
+                "2026-11-02T03:27:00+00:00",
+                "2026-11-02T03:28:00+00:00",
+                "2026-11-02T03:29:00+00:00",
+                "2026-11-02T03:30:00+00:00"
+            ],
+            "Values": [
+                0.2561417768398921,
+                0.6764529297749202,
+                1.1031075914700825,
+                1.1564974188804626
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "gateway_memory",
+            "Label": "AWS/ECS file-transfer gateway MemoryUtilization",
+            "Timestamps": [
+                "2026-11-02T03:27:00+00:00",
+                "2026-11-02T03:28:00+00:00",
+                "2026-11-02T03:29:00+00:00",
+                "2026-11-02T03:30:00+00:00"
+            ],
+            "Values": [
+                0.9765625,
+                1.025390625,
+                1.318359375,
+                1.3671875
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "backend_memory",
+            "Label": "AWS/ECS file-transfer backend MemoryUtilization",
+            "Timestamps": [
+                "2026-11-02T03:27:00+00:00",
+                "2026-11-02T03:28:00+00:00",
+                "2026-11-02T03:29:00+00:00",
+                "2026-11-02T03:30:00+00:00"
+            ],
+            "Values": [
+                1.0091145833333335,
+                1.3671875,
+                1.4811197916666665,
+                1.5625
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "alb_requests_per_target",
+            "Label": "AWS/ApplicationELB app/file-transfer-gateway/cc6cc1fd321da10f targetgroup/file-transfer-gateway/b484d88d88894740 RequestCountPerTarget",
+            "Timestamps": [
+                "2026-11-02T03:27:00+00:00",
+                "2026-11-02T03:28:00+00:00",
+                "2026-11-02T03:29:00+00:00",
+                "2026-11-02T03:30:00+00:00"
+            ],
+            "Values": [
+                31.0,
+                81.0,
+                138.0,
+                223.0
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "alb_requests",
+            "Label": "AWS/ApplicationELB app/file-transfer-gateway/cc6cc1fd321da10f RequestCount",
+            "Timestamps": [
+                "2026-11-02T03:27:00+00:00",
+                "2026-11-02T03:28:00+00:00",
+                "2026-11-02T03:29:00+00:00",
+                "2026-11-02T03:30:00+00:00"
+            ],
+            "Values": [
+                62.0,
+                162.0,
+                276.0,
+                446.0
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "alb_target_5xx",
+            "Label": "AWS/ApplicationELB app/file-transfer-gateway/cc6cc1fd321da10f HTTPCode_Target_5XX_Count",
+            "Timestamps": [
+                "2026-11-02T03:29:00+00:00",
+                "2026-11-02T03:30:00+00:00"
+            ],
+            "Values": [
+                41.0,
+                209.0
+            ],
+            "StatusCode": "Complete"
+        },
+        {
+            "Id": "alb_5xx",
+            "Label": "AWS/ApplicationELB app/file-transfer-gateway/cc6cc1fd321da10f HTTPCode_ELB_5XX_Count",
+            "Timestamps": [],
+            "Values": [],
+            "StatusCode": "Complete"
+        }
+    ],
+    "Messages": []
+}

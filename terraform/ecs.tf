@@ -49,13 +49,13 @@ resource "aws_ecs_task_definition" "backend" {
       { name = "WORKERS", value = tostring(var.backend_workers) },
       { name = "SEND_LOSS", value = tostring(var.backend_send_loss) },
       { name = "RECV_LOSS", value = tostring(var.backend_recv_loss) },
-      { name = "AWS_REGION", value = "us-west-2" },
+      { name = "AWS_REGION", value = "us-east-1" },
     ]
     logConfiguration = {
       logDriver = "awslogs"
       options = {
         awslogs-group         = aws_cloudwatch_log_group.backend.name
-        awslogs-region        = "us-west-2"
+        awslogs-region        = "us-east-1"
         awslogs-stream-prefix = "backend"
       }
     }
@@ -94,7 +94,7 @@ resource "aws_ecs_task_definition" "gateway" {
       logDriver = "awslogs"
       options = {
         awslogs-group         = aws_cloudwatch_log_group.gateway.name
-        awslogs-region        = "us-west-2"
+        awslogs-region        = "us-east-1"
         awslogs-stream-prefix = "gateway"
       }
     }

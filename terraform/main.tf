@@ -19,7 +19,7 @@ terraform {
 
 # The provider of your cloud service, in this case it is AWS.
 provider "aws" {
-  region = "us-west-2" # Which region you are working on
+  region = "us-east-1" # Which region you are working on
 }
 
 # Existing bucket the server fetches requested files from. LabRole cannot manage buckets, so

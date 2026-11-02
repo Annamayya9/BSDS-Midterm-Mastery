@@ -1,0 +1,36 @@
+{
+    "ScalingActivities": [
+        {
+            "ActivityId": "96c6c619-8446-4112-9da2-31ae03afaf55",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/backend",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Attempting to scale due to alarm triggered",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/backend-AlarmLow-20ea8b42-08ee-466a-8675-ce747231746c in state ALARM triggered policy backend-cpu",
+            "StartTime": "2026-11-01T21:41:14.247000-05:00",
+            "StatusCode": "Failed",
+            "NotScaledReasons": [
+                {
+                    "Code": "AlreadyAtMinCapacity",
+                    "MinCapacity": 2
+                }
+            ]
+        },
+        {
+            "ActivityId": "11f4ae5d-6dec-430b-a681-efa49adfb358",
+            "ServiceNamespace": "ecs",
+            "ResourceId": "service/file-transfer/backend",
+            "ScalableDimension": "ecs:service:DesiredCount",
+            "Description": "Attempting to scale due to alarm triggered",
+            "Cause": "monitor alarm TargetTracking-service/file-transfer/backend-AlarmLow-f37d98f0-332e-4b20-b627-5655f4c70592 in state ALARM triggered policy backend-cpu",
+            "StartTime": "2026-10-29T08:03:47.731000-04:00",
+            "StatusCode": "Failed",
+            "NotScaledReasons": [
+                {
+                    "Code": "AlreadyAtMinCapacity",
+                    "MinCapacity": 2
+                }
+            ]
+        }
+    ]
+}

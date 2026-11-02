@@ -1,0 +1,259 @@
+{
+    "services": [
+        {
+            "serviceArn": "arn:aws:ecs:us-east-1:316894995509:service/file-transfer/gateway",
+            "serviceName": "gateway",
+            "clusterArn": "arn:aws:ecs:us-east-1:316894995509:cluster/file-transfer",
+            "loadBalancers": [
+                {
+                    "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:316894995509:targetgroup/file-transfer-gateway/93dba301648ea726",
+                    "containerName": "gateway",
+                    "containerPort": 8000
+                }
+            ],
+            "serviceRegistries": [],
+            "status": "ACTIVE",
+            "desiredCount": 2,
+            "runningCount": 2,
+            "pendingCount": 0,
+            "launchType": "FARGATE",
+            "platformVersion": "LATEST",
+            "platformFamily": "Linux",
+            "taskDefinition": "arn:aws:ecs:us-east-1:316894995509:task-definition/file-transfer-gateway:1",
+            "deploymentConfiguration": {
+                "deploymentCircuitBreaker": {
+                    "enable": false,
+                    "rollback": false
+                },
+                "maximumPercent": 200,
+                "minimumHealthyPercent": 100,
+                "strategy": "ROLLING",
+                "bakeTimeInMinutes": 0
+            },
+            "deployments": [
+                {
+                    "id": "ecs-svc/8052650047645258319",
+                    "status": "PRIMARY",
+                    "taskDefinition": "arn:aws:ecs:us-east-1:316894995509:task-definition/file-transfer-gateway:1",
+                    "desiredCount": 2,
+                    "pendingCount": 0,
+                    "runningCount": 2,
+                    "failedTasks": 0,
+                    "createdAt": "2026-10-29T07:46:15.803000-04:00",
+                    "updatedAt": "2026-10-29T07:48:26.708000-04:00",
+                    "launchType": "FARGATE",
+                    "platformVersion": "1.4.0",
+                    "platformFamily": "Linux",
+                    "networkConfiguration": {
+                        "awsvpcConfiguration": {
+                            "subnets": [
+                                "subnet-0c371a1454380c4a3",
+                                "subnet-031e9d950597ceb64",
+                                "subnet-0e16b3a4265899a9e",
+                                "subnet-0876800704f6b3f77",
+                                "subnet-0876c0b166f7794cc",
+                                "subnet-08258acb1733c797f"
+                            ],
+                            "securityGroups": [
+                                "sg-0e75855f5a63f9344"
+                            ],
+                            "assignPublicIp": "ENABLED"
+                        }
+                    },
+                    "rolloutState": "COMPLETED",
+                    "rolloutStateReason": "ECS deployment ecs-svc/8052650047645258319 completed."
+                }
+            ],
+            "roleArn": "arn:aws:iam::316894995509:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "events": [
+                {
+                    "id": "93f25b87-bbac-4349-acd5-79d91351d4c3",
+                    "createdAt": "2026-10-29T07:47:39.625000-04:00",
+                    "message": "(service gateway) has reached a steady state."
+                },
+                {
+                    "id": "0dae3fa0-e0e2-4943-9ab3-f98dea460e8e",
+                    "createdAt": "2026-10-29T07:47:39.624000-04:00",
+                    "message": "(service gateway) (deployment ecs-svc/8052650047645258319) deployment completed."
+                },
+                {
+                    "id": "b0476c7b-0eaf-47ea-82c4-0a71d8b51a3a",
+                    "createdAt": "2026-10-29T07:47:30.081000-04:00",
+                    "message": "(service gateway) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:316894995509:targetgroup/file-transfer-gateway/93dba301648ea726)"
+                },
+                {
+                    "id": "474f5b60-e7fe-44cc-98af-6e3ca54fc6c0",
+                    "createdAt": "2026-10-29T07:47:10.852000-04:00",
+                    "message": "(service gateway) has started 1 tasks: (task 5702521d0ff84736ba22e51da27a62cb)."
+                },
+                {
+                    "id": "a35e7b47-a218-444e-ad22-d14fe8d4cd43",
+                    "createdAt": "2026-10-29T07:46:58.799000-04:00",
+                    "message": "(service gateway) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:316894995509:targetgroup/file-transfer-gateway/93dba301648ea726)"
+                },
+                {
+                    "id": "215f2bce-b730-4409-9aba-0f093a3d0c28",
+                    "createdAt": "2026-10-29T07:46:30.390000-04:00",
+                    "message": "(service gateway) has started 1 tasks: (task 90bb19d4f9334388b582b3191e82ccf5)."
+                }
+            ],
+            "createdAt": "2026-10-29T07:46:15.803000-04:00",
+            "placementConstraints": [],
+            "placementStrategy": [],
+            "networkConfiguration": {
+                "awsvpcConfiguration": {
+                    "subnets": [
+                        "subnet-0c371a1454380c4a3",
+                        "subnet-031e9d950597ceb64",
+                        "subnet-0e16b3a4265899a9e",
+                        "subnet-0876800704f6b3f77",
+                        "subnet-0876c0b166f7794cc",
+                        "subnet-08258acb1733c797f"
+                    ],
+                    "securityGroups": [
+                        "sg-0e75855f5a63f9344"
+                    ],
+                    "assignPublicIp": "ENABLED"
+                }
+            },
+            "healthCheckGracePeriodSeconds": 30,
+            "schedulingStrategy": "REPLICA",
+            "deploymentController": {
+                "type": "ECS"
+            },
+            "createdBy": "arn:aws:iam::316894995509:role/voclabs",
+            "enableECSManagedTags": false,
+            "propagateTags": "NONE",
+            "enableExecuteCommand": false,
+            "availabilityZoneRebalancing": "ENABLED"
+        },
+        {
+            "serviceArn": "arn:aws:ecs:us-east-1:316894995509:service/file-transfer/backend",
+            "serviceName": "backend",
+            "clusterArn": "arn:aws:ecs:us-east-1:316894995509:cluster/file-transfer",
+            "loadBalancers": [
+                {
+                    "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:316894995509:targetgroup/file-transfer-backend/70e19be790874f47",
+                    "containerName": "backend",
+                    "containerPort": 8080
+                }
+            ],
+            "serviceRegistries": [],
+            "status": "ACTIVE",
+            "desiredCount": 2,
+            "runningCount": 2,
+            "pendingCount": 0,
+            "launchType": "FARGATE",
+            "platformVersion": "LATEST",
+            "platformFamily": "Linux",
+            "taskDefinition": "arn:aws:ecs:us-east-1:316894995509:task-definition/file-transfer-backend:1",
+            "deploymentConfiguration": {
+                "deploymentCircuitBreaker": {
+                    "enable": false,
+                    "rollback": false
+                },
+                "maximumPercent": 200,
+                "minimumHealthyPercent": 100,
+                "strategy": "ROLLING",
+                "bakeTimeInMinutes": 0
+            },
+            "deployments": [
+                {
+                    "id": "ecs-svc/5879420743797765673",
+                    "status": "PRIMARY",
+                    "taskDefinition": "arn:aws:ecs:us-east-1:316894995509:task-definition/file-transfer-backend:1",
+                    "desiredCount": 2,
+                    "pendingCount": 0,
+                    "runningCount": 2,
+                    "failedTasks": 0,
+                    "createdAt": "2026-10-29T07:46:15.886000-04:00",
+                    "updatedAt": "2026-10-29T07:48:55.491000-04:00",
+                    "launchType": "FARGATE",
+                    "platformVersion": "1.4.0",
+                    "platformFamily": "Linux",
+                    "networkConfiguration": {
+                        "awsvpcConfiguration": {
+                            "subnets": [
+                                "subnet-0c371a1454380c4a3",
+                                "subnet-031e9d950597ceb64",
+                                "subnet-0e16b3a4265899a9e",
+                                "subnet-0876800704f6b3f77",
+                                "subnet-0876c0b166f7794cc",
+                                "subnet-08258acb1733c797f"
+                            ],
+                            "securityGroups": [
+                                "sg-0e75930bc8fcfa1c3"
+                            ],
+                            "assignPublicIp": "ENABLED"
+                        }
+                    },
+                    "rolloutState": "COMPLETED",
+                    "rolloutStateReason": "ECS deployment ecs-svc/5879420743797765673 completed."
+                }
+            ],
+            "roleArn": "arn:aws:iam::316894995509:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "events": [
+                {
+                    "id": "67c79bd7-4522-4db5-bb93-16328f5c728e",
+                    "createdAt": "2026-10-29T07:48:09.663000-04:00",
+                    "message": "(service backend) has reached a steady state."
+                },
+                {
+                    "id": "2bd3715d-5549-448e-8878-50c0439ab269",
+                    "createdAt": "2026-10-29T07:48:09.662000-04:00",
+                    "message": "(service backend) (deployment ecs-svc/5879420743797765673) deployment completed."
+                },
+                {
+                    "id": "827a215f-5aca-4055-9b13-07a99ace0ce7",
+                    "createdAt": "2026-10-29T07:47:30.080000-04:00",
+                    "message": "(service backend) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:316894995509:targetgroup/file-transfer-backend/70e19be790874f47)"
+                },
+                {
+                    "id": "f0a95e85-a038-4393-a431-9aef33ef8e94",
+                    "createdAt": "2026-10-29T07:47:00.127000-04:00",
+                    "message": "(service backend) has started 1 tasks: (task 87364729d23744f3970f3769026509b3)."
+                },
+                {
+                    "id": "17763f04-636c-48b2-89fe-b66e728983af",
+                    "createdAt": "2026-10-29T07:46:49.109000-04:00",
+                    "message": "(service backend) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:316894995509:targetgroup/file-transfer-backend/70e19be790874f47)"
+                },
+                {
+                    "id": "1f2a686d-43f2-4749-847a-d7b0e2f915b3",
+                    "createdAt": "2026-10-29T07:46:29.686000-04:00",
+                    "message": "(service backend) has started 1 tasks: (task fb2c8124a39b4f0aa72daf69ecceaf74)."
+                }
+            ],
+            "createdAt": "2026-10-29T07:46:15.886000-04:00",
+            "placementConstraints": [],
+            "placementStrategy": [],
+            "networkConfiguration": {
+                "awsvpcConfiguration": {
+                    "subnets": [
+                        "subnet-0c371a1454380c4a3",
+                        "subnet-031e9d950597ceb64",
+                        "subnet-0e16b3a4265899a9e",
+                        "subnet-0876800704f6b3f77",
+                        "subnet-0876c0b166f7794cc",
+                        "subnet-08258acb1733c797f"
+                    ],
+                    "securityGroups": [
+                        "sg-0e75930bc8fcfa1c3"
+                    ],
+                    "assignPublicIp": "ENABLED"
+                }
+            },
+            "healthCheckGracePeriodSeconds": 30,
+            "schedulingStrategy": "REPLICA",
+            "deploymentController": {
+                "type": "ECS"
+            },
+            "createdBy": "arn:aws:iam::316894995509:role/voclabs",
+            "enableECSManagedTags": false,
+            "propagateTags": "NONE",
+            "enableExecuteCommand": false,
+            "availabilityZoneRebalancing": "ENABLED"
+        }
+    ],
+    "failures": []
+}

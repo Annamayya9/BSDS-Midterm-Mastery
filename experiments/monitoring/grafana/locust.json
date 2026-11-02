@@ -1,0 +1,16 @@
+{
+  "uid": "locust-experiment",
+  "title": "Midterm Mastery — Locust measurements",
+  "tags": ["midterm", "locust"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "5s",
+  "time": {"from": "now-30m", "to": "now"},
+  "panels": [
+    {"id": 1, "title": "Active Locust users", "type": "timeseries", "gridPos": {"x": 0, "y": 0, "w": 12, "h": 8}, "datasource": {"type": "prometheus", "uid": "prometheus"}, "targets": [{"expr": "locust_users", "legendFormat": "Users", "refId": "A"}]},
+    {"id": 2, "title": "Requests and failures per second", "type": "timeseries", "gridPos": {"x": 12, "y": 0, "w": 12, "h": 8}, "datasource": {"type": "prometheus", "uid": "prometheus"}, "targets": [{"expr": "locust_current_requests_per_second", "legendFormat": "Requests/s", "refId": "A"}, {"expr": "locust_current_failures_per_second", "legendFormat": "Failures/s", "refId": "B"}]},
+    {"id": 3, "title": "Recent response time (includes failed requests)", "type": "timeseries", "gridPos": {"x": 0, "y": 8, "w": 12, "h": 8}, "fieldConfig": {"defaults": {"unit": "ms"}, "overrides": []}, "datasource": {"type": "prometheus", "uid": "prometheus"}, "targets": [{"expr": "locust_current_response_time_milliseconds", "legendFormat": "p{{quantile}}", "refId": "A"}]},
+    {"id": 4, "title": "Cumulative requests and failures (reset each run)", "type": "timeseries", "gridPos": {"x": 12, "y": 8, "w": 12, "h": 8}, "datasource": {"type": "prometheus", "uid": "prometheus"}, "targets": [{"expr": "locust_requests_total", "legendFormat": "Requests", "refId": "A"}, {"expr": "locust_failures_total", "legendFormat": "Failures", "refId": "B"}]}
+  ]
+}

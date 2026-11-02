@@ -1,0 +1,12 @@
+[2026-10-29 08:09:56,246] Katrina/INFO/locust.main: Starting Locust 2.47.0
+[2026-10-29 08:09:56,249] Katrina/INFO/locust.main: Starting web interface at http://0.0.0.0:8089, press enter to open your default browser.
+[2026-10-29 08:10:20,739] Katrina/INFO/locust.runners: Ramping to 1 users at a rate of 1.00 per second
+[2026-10-29 08:10:20,739] Katrina/INFO/locust.runners: All users spawned: {"FileDownloadUser": 1} (1 total users)
+[2026-10-29 08:13:13,173] Katrina/INFO/locust.runners: Ramping to 5 users at a rate of 1.00 per second
+[2026-10-29 08:13:16,196] Katrina/INFO/locust.runners: All users spawned: {"FileDownloadUser": 5} (5 total users)
+[2026-10-29 08:15:34,872] Katrina/INFO/locust.runners: Ramping to 10 users at a rate of 2.00 per second
+[2026-10-29 08:15:36,887] Katrina/INFO/locust.runners: All users spawned: {"FileDownloadUser": 10} (10 total users)
+[2026-10-29 08:17:27,462] Katrina/INFO/locust.runners: Ramping to 20 users at a rate of 4.00 per second
+[2026-10-29 08:17:29,481] Katrina/INFO/locust.runners: All users spawned: {"FileDownloadUser": 20} (20 total users)
+[2026-10-29 08:19:30,269] Katrina/INFO/locust.runners: Ramping to 1 users at a rate of 1.00 per second
+[2026-10-29 08:19:48,367] Katrina/INFO/locust.runners: All users spawned: {"FileDownloadUser": 1} (1 total users)

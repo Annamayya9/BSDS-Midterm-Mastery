@@ -1,0 +1,12 @@
+{
+    "events": [
+        {
+            "logStreamName": "gateway/gateway/c5ffe1dcadd046219e161df1d62116ca",
+            "timestamp": 1793589715850,
+            "message": "Missing chunks [2], retrying",
+            "ingestionTime": 1793589716453,
+            "eventId": "39998387243875792200118800187280700352300150786133590019"
+        }
+    ],
+    "searchedLogStreams": []
+}

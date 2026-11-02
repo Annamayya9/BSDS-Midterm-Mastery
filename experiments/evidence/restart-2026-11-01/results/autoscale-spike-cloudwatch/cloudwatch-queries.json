@@ -1,0 +1,166 @@
+[
+    {
+        "ReturnData":  true,
+        "MetricStat":  {
+                           "Metric":  {
+                                          "Dimensions":  [
+                                                             {
+                                                                 "Value":  "file-transfer",
+                                                                 "Name":  "ClusterName"
+                                                             },
+                                                             {
+                                                                 "Value":  "gateway",
+                                                                 "Name":  "ServiceName"
+                                                             }
+                                                         ],
+                                          "MetricName":  "CPUUtilization",
+                                          "Namespace":  "AWS/ECS"
+                                      },
+                           "Period":  60,
+                           "Stat":  "Average"
+                       },
+        "Id":  "gateway_cpu"
+    },
+    {
+        "ReturnData":  true,
+        "MetricStat":  {
+                           "Metric":  {
+                                          "Dimensions":  [
+                                                             {
+                                                                 "Value":  "file-transfer",
+                                                                 "Name":  "ClusterName"
+                                                             },
+                                                             {
+                                                                 "Value":  "backend",
+                                                                 "Name":  "ServiceName"
+                                                             }
+                                                         ],
+                                          "MetricName":  "CPUUtilization",
+                                          "Namespace":  "AWS/ECS"
+                                      },
+                           "Period":  60,
+                           "Stat":  "Average"
+                       },
+        "Id":  "backend_cpu"
+    },
+    {
+        "ReturnData":  true,
+        "MetricStat":  {
+                           "Metric":  {
+                                          "Dimensions":  [
+                                                             {
+                                                                 "Value":  "file-transfer",
+                                                                 "Name":  "ClusterName"
+                                                             },
+                                                             {
+                                                                 "Value":  "gateway",
+                                                                 "Name":  "ServiceName"
+                                                             }
+                                                         ],
+                                          "MetricName":  "MemoryUtilization",
+                                          "Namespace":  "AWS/ECS"
+                                      },
+                           "Period":  60,
+                           "Stat":  "Average"
+                       },
+        "Id":  "gateway_memory"
+    },
+    {
+        "ReturnData":  true,
+        "MetricStat":  {
+                           "Metric":  {
+                                          "Dimensions":  [
+                                                             {
+                                                                 "Value":  "file-transfer",
+                                                                 "Name":  "ClusterName"
+                                                             },
+                                                             {
+                                                                 "Value":  "backend",
+                                                                 "Name":  "ServiceName"
+                                                             }
+                                                         ],
+                                          "MetricName":  "MemoryUtilization",
+                                          "Namespace":  "AWS/ECS"
+                                      },
+                           "Period":  60,
+                           "Stat":  "Average"
+                       },
+        "Id":  "backend_memory"
+    },
+    {
+        "ReturnData":  true,
+        "MetricStat":  {
+                           "Metric":  {
+                                          "Dimensions":  [
+                                                             {
+                                                                 "Value":  "app/file-transfer-gateway/cc6cc1fd321da10f",
+                                                                 "Name":  "LoadBalancer"
+                                                             },
+                                                             {
+                                                                 "Value":  "targetgroup/file-transfer-gateway/b484d88d88894740",
+                                                                 "Name":  "TargetGroup"
+                                                             }
+                                                         ],
+                                          "MetricName":  "RequestCountPerTarget",
+                                          "Namespace":  "AWS/ApplicationELB"
+                                      },
+                           "Period":  60,
+                           "Stat":  "Sum"
+                       },
+        "Id":  "alb_requests_per_target"
+    },
+    {
+        "ReturnData":  true,
+        "MetricStat":  {
+                           "Metric":  {
+                                          "Dimensions":  [
+                                                             {
+                                                                 "Value":  "app/file-transfer-gateway/cc6cc1fd321da10f",
+                                                                 "Name":  "LoadBalancer"
+                                                             }
+                                                         ],
+                                          "MetricName":  "RequestCount",
+                                          "Namespace":  "AWS/ApplicationELB"
+                                      },
+                           "Period":  60,
+                           "Stat":  "Sum"
+                       },
+        "Id":  "alb_requests"
+    },
+    {
+        "ReturnData":  true,
+        "MetricStat":  {
+                           "Metric":  {
+                                          "Dimensions":  [
+                                                             {
+                                                                 "Value":  "app/file-transfer-gateway/cc6cc1fd321da10f",
+                                                                 "Name":  "LoadBalancer"
+                                                             }
+                                                         ],
+                                          "MetricName":  "HTTPCode_Target_5XX_Count",
+                                          "Namespace":  "AWS/ApplicationELB"
+                                      },
+                           "Period":  60,
+                           "Stat":  "Sum"
+                       },
+        "Id":  "alb_target_5xx"
+    },
+    {
+        "ReturnData":  true,
+        "MetricStat":  {
+                           "Metric":  {
+                                          "Dimensions":  [
+                                                             {
+                                                                 "Value":  "app/file-transfer-gateway/cc6cc1fd321da10f",
+                                                                 "Name":  "LoadBalancer"
+                                                             }
+                                                         ],
+                                          "MetricName":  "HTTPCode_ELB_5XX_Count",
+                                          "Namespace":  "AWS/ApplicationELB"
+                                      },
+                           "Period":  60,
+                           "Stat":  "Sum"
+                       },
+        "Id":  "alb_5xx"
+    }
+]

@@ -1,0 +1,6 @@
+{
+    "clusterArns": [
+        "arn:aws:ecs:us-east-1:316894995509:cluster/assignment6-search-cluster",
+        "arn:aws:ecs:us-east-1:316894995509:cluster/default"
+    ]
+}

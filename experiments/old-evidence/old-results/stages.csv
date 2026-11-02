@@ -1,0 +1,8 @@
+"Run","StartedLocal","Users","SpawnRate","WaitSeconds","File"
+"load-5users","2026-10-29T08:13:13.1081738-04:00","5","1","1","tiny.txt"
+"load-10users","2026-10-29T08:15:34.8480992-04:00","10","2","1","tiny.txt"
+"load-20users","2026-10-29T08:17:27.4423017-04:00","20","4","1","tiny.txt"
+"load-recovery-1user","2026-10-29T08:19:30.2502792-04:00","1","1","1","tiny.txt"
+"load-recovery-clean-1user","2026-10-29T08:22:11.2660300-04:00","1","1","1","tiny.txt"
+"sendloss-5pct","2026-10-29T09:41:36.3336885-04:00","5","1","1","tiny.txt"
+"recvloss-5pct","2026-10-29T09:50:32.5484986-04:00","5","1","1","tiny.txt"
