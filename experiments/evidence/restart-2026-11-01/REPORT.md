@@ -12,7 +12,7 @@ I used Locust 2.37.9 to record HTTP request counts, failures, throughput, and en
 
 All times below are UTC on November 2, 2026; subtract five hours for Eastern Standard Time on November 1. The [experiment log](experiment-notes.md), [run manifest](results/run-manifest.csv), and [event log](results/events.jsonl) preserve the detailed chronology. Percentiles and RPS are rounded as shown in Locust exports. A Locust statistics screenshot taken during a run need not match its final CSV.
 
-## 1. Load and recovery: 02:30–02:50 UTC
+## 1. Load and recovery:
 
 **Question:** What changes when concurrency rises, and does the service recover when it falls? I kept the gateway and backend at two tasks each, with send and receive loss both fixed at 0%. I started with five users, increased to 20, then returned to five; I reset statistics for each stage.
 
@@ -24,11 +24,23 @@ All times below are UTC on November 2, 2026; subtract five hours for Eastern Sta
 
 The 20-user measurement began at 02:39:46 after the load increase and reset; recovery measurement began at 02:45:32. Four times as many users yielded about 2.4 times the throughput and a higher p95, while no HTTP failures were recorded. At five users again, the measured median and p95 returned to baseline values. This establishes recovery for this workload and trial; it does not identify the bottleneck or the system's maximum capacity.
 
+![Locust charts at five users](screenshots/load-5-charts.png)
+
+*Baseline: Locust shows five users, approximately 1.5–2 requests/s, no visible failures, and response-time percentiles around 2.3–2.7 seconds during this screenshot.*
+
+![Locust charts at 20 users](screenshots/load-20-charts.png)
+
+*Higher load: at 20 users, request rate and response-time percentiles were higher, while failures remained at zero in the displayed interval.*
+
+![Locust charts during recovery](screenshots/load-recovery-charts.png)
+
+*Recovery: after returning to five users, throughput and response times returned close to their initial levels, with no visible failures.*
+
 ![Load and recovery dashboard](screenshots/load-recovery-grafana.png)
 
 *Grafana's client-metric dashboard shows users rising from 5 to 20 and returning to 5, with response times following the load. The cumulative counter resets at stage boundaries.* [CloudWatch CPU](screenshots/load-cloudwatch-cpu-aws-widget.png) and [requests per target](screenshots/load-cloudwatch-requests-per-target-aws-widget.png) are AWS-generated metric-widget images, not browser screenshots; their [underlying metrics](results/load-cloudwatch-metrics.json) cover the load window.
 
-## 2. Simulated UDP loss: 02:54–03:22 UTC
+## 2. Simulated UDP loss:
 
 **Question:** How do dropped backend datagrams affect HTTP results and latency? I reused the five-user zero-loss baseline as the control. With both services fixed at two tasks, I first configured backend send loss at 5% and receive loss at 0%; after the rollout, I ran five users. I then set send loss to 0% and receive loss to 5%, waited for the rollout, and repeated the test. The other workload and retry settings remained fixed.
 
@@ -42,17 +54,42 @@ The send test ran 02:54:44–03:11:47; the receive test ran 03:16:35–03:22:18.
 
 ![Locust send-loss charts](screenshots/udp-send-5-charts.png)
 
-*During the send-loss run, five users generated no visible HTTP failures while p95 often exceeded the median. The screenshot is from within the run; the table uses the final CSV.* The [receive-loss Grafana screenshot](screenshots/udp-receive-5-grafana.png) also includes part of the preceding send run and the idle rollout: receive data begins around 22:16 Eastern. An early exporter issue displayed stale request rate during idle; do not interpret that idle segment as real traffic.
+*During the send-loss run, five users generated no visible HTTP failures while p95 often exceeded the median. The screenshot is from within the run; the table uses the final CSV.*
 
-## 3. Autoscaling response: 03:27–03:52 UTC
+![Grafana dashboard during 5% send loss](screenshots/udp-send-5-grafana.png)
+
+*Send loss: the client-side dashboard shows five users, no recorded HTTP failures, and recent p95 often above the median. These are in-progress observations, not the final CSV totals.*
+
+![Grafana dashboard during 5% receive loss](screenshots/udp-receive-5-grafana.png)
+
+*Receive loss: this 15-minute view also includes part of the preceding send run and the idle rollout; receive data begins around 22:16 Eastern. An early exporter issue displayed stale request rate during idle, so that idle segment must not be interpreted as real traffic.*
+
+## 3. Autoscaling response:
 
 **Question:** What happens under a gradual ramp versus a sudden spike, and how quickly does scaling respond? I returned both simulated loss settings to 0%. The gateway and backend each had minimum two and maximum four ECS tasks. The gateway targeted 100 ALB requests per target per minute; the backend targeted 60% CPU. The gateway high alarm used three one-minute periods above its threshold. Both trials began with two running tasks for each service.
+
+| Trial and measurement window | Requests | HTTP failures | Requests/s | Median | p95 | Evidence |
+|---|---:|---:|---:|---:|---:|---|
+| Gradual ramp: first three minutes at 50 users | 1,345 | 627 (46.6%) | 7.32 | 6.9 s | 7.6 s | [CSV](results/autoscale-ramp-50-minute-3.csv) |
+| Gradual ramp: after four gateway targets were healthy | 644 | 1 (0.16%) | 7.87 | 6.3 s | 7.2 s | [CSV](results/autoscale-ramp-after-scale-final.csv) |
+| Sudden spike: first three minutes at 50 users | 1,497 | 777 (51.9%) | 8.19 | 5.6 s | 6.2 s | [CSV](results/autoscale-spike-50-minute-3.csv) |
+| Sudden spike: after four gateway targets were healthy | 492 | 0 | 8.20 | 5.8 s | 7.6 s | [CSV](results/autoscale-spike-after-scale-final.csv) |
+
+The post-scale measurements are separate, shorter windows from the same trials; the response-time percentiles include failed requests. These comparisons show what happened before and after scaling, but do not isolate scaling as the sole cause of the change.
 
 ### Gradual ramp
 
 I requested 5, then 20, then 50 users; separate measurements began at 03:27:36, 03:28:46, and 03:29:54. In the first three minutes of the 50-user plateau, [Locust](results/autoscale-ramp-50-minute-3.csv) recorded 1,345 requests and 627 HTTP failures (46.6%), at 7.32 requests/s, median 6.9 s and p95 7.6 s. A recent CloudWatch value was 223 requests per target per minute. At 03:34:35 the scaling activity requested four gateway tasks; samples showed two running and two pending at 03:34:50 and four running at 03:35:21. A subsequent health check confirmed four healthy gateway targets; the backend remained at two tasks in the recorded samples.
 
 Once all four targets were healthy, a separate [post-scale measurement](results/autoscale-ramp-after-scale-final.csv) recorded 644 requests, one HTTP failure, 7.87 requests/s, median 6.3 s, and p95 7.2 s. These are sequential windows of one run, so the improvement coincided with scale-out but does not prove task count was the only cause. The [Locust statistics screenshot](screenshots/autoscale-ramp-stats.png) was taken **before** the scale-out request and shows an in-progress count, not the post-scale result.
+
+![Locust charts during the gradual autoscaling ramp](screenshots/autoscale-ramp-charts.png)
+
+*Gradual ramp: Locust shows user count, request and failure rates, and response-time percentiles before scale-out.*
+
+![Grafana dashboard during the gradual autoscaling ramp](screenshots/autoscale-ramp-grafana.png)
+
+*Gradual ramp: the right side shows users increasing from 5 to 20 to 50, with failures and latency rising at 50 users. This screenshot was captured before the gateway scale-out request; the earlier portion includes the preceding receive-loss run.*
 
 ![Gradual ramp ECS task counts](figures/autoscale-ramp-task-counts.png)
 
@@ -63,6 +100,14 @@ Once all four targets were healthy, a separate [post-scale measurement](results/
 After stopping the ramp, I manually set gateway desired count back to two at 03:42:48 rather than waiting for automatic scale-in. At 03:43:10 the recorder showed two running tasks per service, but the target group still had two additional targets draining. From no active users, I requested 50 users at 25 users/s at 03:43:47; the measurement began at 03:43:54 after reaching 50 and resetting Locust.
 
 The first three-minute [snapshot](results/autoscale-spike-50-minute-3.csv) had 1,497 requests, 777 HTTP failures (51.9%), 8.19 requests/s, median 5.6 s, and p95 6.2 s. Gateway scaling activity requested four tasks at 03:49:35; the recorder saw four running at 03:50:28, and a health check confirmed all four targets healthy. A separate [post-scale sample](results/autoscale-spike-after-scale-final.csv) recorded 492 requests, zero HTTP failures, 8.20 requests/s, median 5.8 s, and p95 7.6 s. The [spike screenshot](screenshots/autoscale-spike-stats.png) was captured before scale-out. The pre- and post-scale response percentiles include failures where present, so a lower percentile during the failure-heavy period does not establish better successful-request performance.
+
+![Locust charts during the sudden spike](screenshots/autoscale-spike-charts.png)
+
+*Sudden spike: Locust shows the 50-user load, request and failure rates, and response-time percentiles before scale-out.*
+
+![Grafana dashboard during the sudden spike](screenshots/autoscale-spike-grafana.png)
+
+*Sudden spike: the right side shows the new 50-user run and its failures before scale-out. The left side shows the end of the previous ramp; the gap separates the trials. The panels display Locust client metrics, not ECS task counts.*
 
 ![Spike requests per target](screenshots/autoscale-spike-cloudwatch-requests-per-target.png)
 
